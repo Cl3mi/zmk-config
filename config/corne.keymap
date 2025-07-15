@@ -136,29 +136,31 @@
         &kp TAB    &kp Q         &kp W         &kp E        &kp R                                    &kp T        &kp Y    &kp U                                     &kp I        &kp O         &kp P            &kp BSLH
         &capdance  &hml LSHFT A  &hml LCTRL S  &hml LALT D  &hml LCMD F                              &kp G        &kp H    &hmr RCMD J                               &hmr RALT K  &hmr RCTRL L  &hmr RSHFT SEMI  &kp APOS
         &kp LSHFT  &kp Z         &kp X         &kp C        &kp V                                    &kp B        &kp N    &kp M                                     &kp COMMA    &kp DOT       &kp FSLH         &kp ESC
-                                               &kp LGUI     &trans  &kp SPACE    &kp RET  &trans  &kp RALT
+                                        &lt lower LGUI  &lt raise SPACE  &kp BSPC     &lt raise RET  &lt lower RALT  &kp ESC
       >;
 
     };
 
-    raise {
-      bindings = <
-        &trans      &kp N1        &kp N2        &kp N3        &kp N4        &kp N5          &kp N6  &kp N7  &kp N8  &kp N9  &kp N0  &trans
-        &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &trans  &trans  &trans  &trans  &trans  &trans
-        &trans      &trans        &trans        &trans        &trans        &trans          &trans  &trans  &trans  &trans  &trans  &trans
-                                                &trans        &trans        &trans          &trans  &trans  &trans
-      >;
+     raise {
+        bindings = <
+            &kp ESC     &kp TAB      &kp F1       &kp F2       &kp F3       &kp F4        &kp N7      &kp N8       &kp N9       &kp SLASH    &kp ASTERISK &kp MINUS
+            &kp DEL     &kp BSPC     &kp F5       &kp F6       &kp F7       &kp F8        &kp N4      &kp N5       &kp N6       &kp PLUS     &trans       &trans
+            &kp LEFT    &kp DOWN     &kp UP       &kp RIGHT    &kp PG_UP    &kp PG_DN     &kp N1      &kp N2       &kp N3       &kp KP_ENTER &trans       &trans
+                                      &trans      &kp N0       &kp COMMA    &trans      &trans      &trans
+        >;
+      };
 
-    };
+      lower {
+        bindings = <
+            &trans      &kp EXCL    &kp AT      &kp HASH    &kp DLLR    &kp PRCNT
+            &trans      &kp LBKT    &kp LCBR    &kp LPAR    &kp RPAR    &kp RCBR
+            &kp CARET   &kp AMPS    &kp STAR    &kp EQUAL   &kp PLUS    &kp PIPE
+            &kp TILDE   &kp MINUS   &kp UNDERSCORE &kp BSLH &kp COLON   &kp SEMI
+            &trans      &kp GRAVE   &kp EURO    &kp RBKT    &kp AT      &kp BACKSLASH
+                                  &trans     &trans     &trans     &trans     &trans     &trans
+        >;
+      };
 
-    lower {
-      bindings = <
-        &trans  &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS   &kp STAR  &kp LPAR  &kp RPAR  &trans
-        &trans  &trans    &trans  &trans    &trans    &trans       &kp MINUS  &kp EQUAL  &kp LBKT  &kp RBKT  &kp BSLH  &kp GRAVE
-        &trans  &trans    &trans  &trans    &trans    &trans       &kp UNDER  &kp PLUS   &kp LBRC  &kp RBRC  &kp PIPE  &kp TILDE
-                                  &trans    &trans    &trans       &trans     &trans     &trans
-      >;
-    };
 
     autoshift {
       bindings = <
