@@ -160,7 +160,7 @@
       lower {
         bindings = <
           &kp EXCL    &kp AT    &kp HASH    &kp DOLLAR    &kp PRCNT    &kp CARET    &kp AMPS    &kp STAR     &kp LPAR     &kp RPAR     &kp PLUS     &kp PIPE
-          &kp LBKT    &kp LCBR    &kp LPAR    &kp RPAR    &kp RCBR    &kp MINUS    &kp EQUAL   &kp TILDE    &kp GRAVE    &kp BSLH    &kp COLON    &kp SEMI
+          &kp LBRC    &kp LCBR    &kp LPAR    &kp RPAR    &kp RCBR    &kp MINUS    &kp EQUAL   &kp TILDE    &kp GRAVE    &kp BSLH    &kp COLON    &kp SEMI
           &kp EURO    &kp UNDERSCORE    &kp DOT    &kp COMMA    &kp RBKT    &kp LBRC    &kp AT    &kp BACKSLASH    &trans    &trans    &trans    &trans
                              &trans    &trans      &trans       &trans       &trans     &trans
         >;
