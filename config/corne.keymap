@@ -94,18 +94,13 @@
       bindings = <&kp LC(LS(E))>; // Example: on Linux Compose+E = €
     };
 
-    macro_dia_a: macro_dia_a {
-      compatible = "zmk,behavior-macro";
-      #binding-cells = <0>;
-      label = "diaeresis_a";
-      bindings = <
-        &macro_press,
-        &kp DEAD_DIAERESIS,
-        &macro_tap,
-        &kp A,
-        &macro_release
-      >;
+  de_ae: de_ae {
+    compatible = "zmk,behavior-unicode-macro";
+    #binding-cells = <0>;
+    label = "DE_ae";
+    bindings = <0x00E4>;
   };
+
 
   };
 
@@ -171,7 +166,7 @@
     base {
       bindings = <
         &kp TAB    &kp Q  &kp W         &kp E        &kp R        &kp T        &kp Z      &kp U        &kp I        &kp O         &kp P          &kp BSLH
-        &capdance  &kp A  &hml LCTRL S  &hml LALT D  &hml LCMD F  &kp G        &kp H      &hmr RCMD J  &hmr RALT K  &hmr RCTRL L  &macro_dia_a     &kp APOS
+        &capdance  &kp A  &hml LCTRL S  &hml LALT D  &hml LCMD F  &kp G        &kp H      &hmr RCMD J  &hmr RALT K  &hmr RCTRL L  &de_ae     &kp APOS
         &kp LSHFT  &kp Y  &kp X         &kp C        &kp V        &kp B        &kp N      &kp M        &kp COMMA    &kp DOT       &kp FSLH       &kp ESC
                                         &lt 2 LGUI   &lt 1 SPACE  &kp SPACE    &lt 1 RET  &lt 2 RALT   &kp LCTRL
       >;
