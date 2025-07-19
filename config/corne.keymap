@@ -82,11 +82,12 @@ macros {
   };
 
   de_ae: de_ae {
-    compatible = "zmk,behavior-unicode-macro";
+    compatible = "zmk,behavior-macro";
     #binding-cells = <0>;
     label = "DE_ae";
     bindings = <&unicode_input 0x00E4>;
   };
+
 };
 
   behaviors {
