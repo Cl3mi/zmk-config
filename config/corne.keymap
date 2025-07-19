@@ -88,6 +88,13 @@
       #binding-cells = <0>;
       bindings = <&kp LC(LS(E))>; // Example: on Linux Compose+E = €
     };
+
+    oe_macro: oe_macro {
+      compatible = "zmk,behavior-macro";
+      #binding-cells = <0>;
+      bindings = <&kp O>;
+      label = "OE_MACRO";
+    };
   };
 
   behaviors {
@@ -160,19 +167,19 @@
 
     raise {
       bindings = <
-        &kp ESC   &kp TAB   &kp F1  &kp F2           &kp F3     &kp F5           &kp N7  &kp N8  &kp N9     &kp SLASH     &kp ASTERISK  &kp MINUS
-        &kp DEL   &kp BSPC  &trans  &kp PRINTSCREEN  &kp F10    &kp F11          &kp N4  &kp N5  &kp N6     &kp PLUS      &trans        &trans
-        &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT        &kp PG_UP  &kp PG_DN        &kp N1  &kp N2  &kp N3     &kp KP_ENTER  &trans        &trans
-                                    &trans           &trans     &kp BACKSPACE    &trans  &kp N0  &kp LCTRL
+        &kp ESC   &kp TAB   &kp F1  &kp F2           &kp F3     &kp F5       &kp N7         &kp N8  &kp N9     &kp SLASH     &kp ASTERISK  &kp MINUS
+        &kp DEL   &kp BSPC  &trans  &kp PRINTSCREEN  &kp F10    &kp F11      &kp N4         &kp N5  &kp N6     &kp PLUS      &trans        &trans
+        &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT        &kp PG_UP  &kp PG_DN    &kp N1         &kp N2  &kp N3     &kp KP_ENTER  &trans        &trans
+                                    &trans           &trans     &trans       &kp BACKSPACE  &kp N0  &kp LCTRL
       >;
     };
 
     lower {
       bindings = <
-        &kp EXCL  &kp AT          &kp HASH  &kp DOLLAR  &kp PRCNT         &kp CARET            &kp AMPS   &kp STAR       &kp LEFT_BRACKET      &kp RIGHT_BRACKET     &kp PLUS           &kp PIPE
-        &kp LBRC  &kp RBRC        &kp LPAR  &kp RPAR    &kp RBRC          &kp MINUS            &kp EQUAL  &kp TILDE      &kp GRAVE             &kp SLASH             &kp COLON          &kp SEMI
+        &kp EXCL  &kp QUESTION    &kp AT    &kp DOLLAR  &kp PRCNT         &kp CARET            &kp AMPS   &kp STAR       &kp LEFT_BRACKET      &kp RIGHT_BRACKET     &kp PLUS           &kp PIPE
+        &kp LBRC  &kp RBRC        &kp LPAR  &kp RPAR    &kp HASH          &kp MINUS            &kp EQUAL  &kp TILDE      &kp GRAVE             &kp SLASH             &kp COLON          &kp SEMI
         &trans    &kp UNDERSCORE  &kp DOT   &kp COMMA   &kp SINGLE_QUOTE  &kp DOUBLE_QUOTES    &kp AT     &kp BACKSLASH  &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP
-                                            &trans      &trans            &trans               &trans     &trans         &kp LCTRL
+                                            &trans      &trans            &kp DEL              &trans     &trans         &kp LCTRL
       >;
     };
 
