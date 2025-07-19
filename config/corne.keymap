@@ -5,10 +5,14 @@
 // dt-formatter: multilineListCommaStyle = "leading"
 &sk { /delete-property/ ignore-modifiers; };
 / {
-  unicode_input: unicode_input {
-    compatible = "zmk,behavior-unicode-input";
-    #binding-cells = <1>;
-  };
+  // Remove or comment out this custom unicode_input behavior if it's not used elsewhere.
+  // The zmk,behavior-unicode-macro handles unicode output internally,
+  // so this custom 'unicode_input' node is not needed for 'de_ae'.
+  // unicode_input: unicode_input {
+  //   compatible = "zmk,behavior-unicode-input";
+  //   #binding-cells = <1>;
+  // };
+
   combos {
     compatible = "zmk,combos";
     tab {
@@ -65,12 +69,12 @@ macros {
     #binding-cells = <0>;
     bindings = <&kp LC(LS(E))>;
   };
-  // FIX APPLIED HERE: Changed compatible to "zmk,behavior-macro" and directly call unicode_input
+  // THIS IS THE CORRECTED PART for de_ae
   de_ae: de_ae {
-    compatible = "zmk,behavior-macro"; // Changed from zmk,behavior-unicode-macro
+    compatible = "zmk,behavior-unicode-macro"; // Correct compatible for single unicode character
     #binding-cells = <0>;
     label = "DE_ae";
-    bindings = <&unicode_input 0x00E4>; // Direct call to unicode_input
+    unicode = <0x00E4>; // Use 'unicode' property for the code point
   };
 };
   behaviors {
