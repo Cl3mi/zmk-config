@@ -92,7 +92,7 @@
     oe_macro: oe_macro {
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
-      bindings = <&kp O>;
+      bindings = <&unicode_input 0x00F6>;
       label = "OE_MACRO";
     };
   };
@@ -159,7 +159,7 @@
     base {
       bindings = <
         &kp TAB    &kp Q  &kp W         &kp E        &kp R        &kp T        &kp Z      &kp U        &kp I        &kp O         &kp P          &kp BSLH
-        &capdance  &kp A  &hml LCTRL S  &hml LALT D  &hml LCMD F  &kp G        &kp H      &hmr RCMD J  &hmr RALT K  &hmr RCTRL L  &kp SEMICOLON  &kp APOS
+        &capdance  &kp A  &hml LCTRL S  &hml LALT D  &hml LCMD F  &kp G        &kp H      &hmr RCMD J  &hmr RALT K  &hmr RCTRL L  &oe_macro  &kp APOS
         &kp LSHFT  &kp Y  &kp X         &kp C        &kp V        &kp B        &kp N      &kp M        &kp COMMA    &kp DOT       &kp FSLH       &kp ESC
                                         &lt 2 LGUI   &lt 1 SPACE  &kp SPACE    &lt 1 RET  &lt 2 RALT   &kp LCTRL
       >;
