@@ -93,6 +93,7 @@
       #binding-cells = <0>;
       bindings = <&kp LC(LS(E))>; // Example: on Linux Compose+E = €
     };
+
   };
 
   behaviors {
