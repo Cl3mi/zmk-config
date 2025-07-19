@@ -98,7 +98,7 @@
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
       label = "diaeresis_a";
-      bindings = <&kp DEAD_DIAERESIS &kp A>;
+      bindings = <&kp DEAD_DIAERESIS>, <&kp A>;
   };
 
   };
