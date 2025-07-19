@@ -5,8 +5,10 @@
 // dt-formatter: multilineListCommaStyle = "leading"
 &sk { /delete-property/ ignore-modifiers; };
 / {
-  // Moved unicode_input behavior definition into the 'behaviors' node
-  // No standalone unicode_input node here anymore
+  // We don't need a separate 'unicode_input' behavior node for this method
+  // unless you actively use it for other direct bindings.
+  // If you don't use it elsewhere, you can remove this entirely.
+  // If you do, ensure it's in the 'behaviors' node.
 
   combos {
     compatible = "zmk,combos";
@@ -64,16 +66,25 @@ macros {
     #binding-cells = <0>;
     bindings = <&kp LC(LS(E))>;
   };
-  // FIX: Redefined as a standard macro that calls the 'unicode_input' behavior
+
+  // NEW FIX: Macro for 'ä' using Ctrl+Shift+u for Linux Unicode input
   de_ae: de_ae {
-    compatible = "zmk,behavior-macro"; // <<-- MUST be zmk,behavior-macro
+    compatible = "zmk,behavior-macro";
     #binding-cells = <0>;
     label = "DE_ae";
-    bindings = <&unicode_input 0x00E4>; // <<-- Calls the unicode_input BEHAVIOR
+    bindings = <
+      &macro_press &kp LCTRL &kp LSHFT, // Press Ctrl+Shift
+      &macro_tap &kp U, // Type 'u' (this often activates Unicode input mode)
+      &macro_release &kp LCTRL &kp LSHFT, // Release Ctrl+Shift
+      &macro_tap &kp N0 &kp N0 &kp E &kp N4, // Type the hex code "00E4"
+      &macro_tap &kp RET // Confirm with Enter
+    >;
   };
 };
   behaviors {
-    // FIX: Define unicode_input here as a behavior
+    // If you don't use &unicode_input directly elsewhere,
+    // you can remove this entire block.
+    // However, if you do, keeping it here is correct.
     unicode_input: unicode_input {
       compatible = "zmk,behavior-unicode-input";
       #binding-cells = <1>;
