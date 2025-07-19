@@ -8,6 +8,10 @@
 &sk { /delete-property/ ignore-modifiers; };
 
 / {
+  unicode_input: unicode_input {
+    compatible = "zmk,behavior-unicode-input";
+  };
+
   combos {
     compatible = "zmk,combos";
 
