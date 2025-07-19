@@ -93,6 +93,12 @@
       #binding-cells = <0>;
       bindings = <&kp LC(LS(E))>; // Example: on Linux Compose+E = €
     };
+  de_ae: de_ae {
+    compatible = "zmk,behavior-unicode-macro";
+    #binding-cells = <0>;
+    label = "DE_ae";
+    bindings = <0x00E4>;
+  };
 
   };
 
