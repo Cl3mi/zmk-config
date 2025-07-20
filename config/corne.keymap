@@ -102,8 +102,8 @@
           &macro_press   &kp RCTL
           &macro_release &kp RCTL
           // Press double quote
-          &macro_press   &kp QUOTE
-          &macro_release &kp QUOTE
+          &macro_press   &kp DOUBLE_QUOTES
+          &macro_release &kp DOUBLE_QUOTES
           // Press 'a'
           &macro_press   &kp A
           &macro_release &kp A
