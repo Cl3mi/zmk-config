@@ -105,8 +105,6 @@
           &macro_press   &kp DOUBLE_QUOTES
           &macro_release &kp DOUBLE_QUOTES
 
-          // add deadkey for delay
-          &macro_tap     &kp NOP
           // Press 'a'
           // &macro_press   &kp A
           // &macro_release &kp A
