@@ -67,19 +67,19 @@ macros {
     bindings = <&kp LC(LS(E))>;
   };
 
-  // NEW FIX: Macro for 'ä' using Ctrl+Shift+u for Linux Unicode input
   de_ae: de_ae {
     compatible = "zmk,behavior-macro";
     #binding-cells = <0>;
     label = "DE_ae";
     bindings = <
-      &macro_press &kp LCTRL &kp LSHFT, // Press Ctrl+Shift
-      &macro_tap &kp U, // Type 'u' (this often activates Unicode input mode)
-      &macro_release &kp LCTRL &kp LSHFT, // Release Ctrl+Shift
+      &macro_press &kp LCTRL &kp LSHFT, // Press Ctrl and Shift (no comma after LSHFT)
+      &macro_tap &kp U,                  // Type 'u'
+      &macro_release &kp LCTRL &kp LSHFT, // Release Ctrl and Shift (no comma after LSHFT)
       &macro_tap &kp N0 &kp N0 &kp E &kp N4, // Type the hex code "00E4"
-      &macro_tap &kp RET // Confirm with Enter
+      &macro_tap &kp RET                 // Confirm with Enter
     >;
   };
+
 };
   behaviors {
     // If you don't use &unicode_input directly elsewhere,
