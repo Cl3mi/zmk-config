@@ -81,13 +81,30 @@
         , <&macro_release>
         , <&kp RCTL>
         , <&macro_press>
-        , <&kp DOUBLE_QUOTES>
+        , <&kp EQUAL>
         , <&macro_release>
-        , <&kp DOUBLE_QUOTES>
+        , <&kp EQUAL>
+        , <&macro_press>
+        , <&kp E>
+        , <&macro_release>
+        , <&kp E>
         ;
 
       label = "EURO";
     };
+  scharfes_s: scharfes_s {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings =
+      <&macro_press>, <&kp RCTL>,
+      <&macro_release>, <&kp RCTL>,
+      <&macro_press>, <&kp S>,
+      <&macro_release>, <&kp S>,
+      <&macro_press>, <&kp S>,
+      <&macro_release>, <&kp S>;
+
+    label = "SCHARFES_S";
+  };
   };
 
   behaviors {
@@ -153,7 +170,7 @@
 
     base {
       bindings = <
-        &kp TAB    &kp Q  &kp W         &kp E        &kp R        &kp T        &kp Z      &kp U        &kp I        &kp O         &kp P               &kp BSLH
+        &kp TAB    &kp Q  &kp W         &kp E        &kp R        &kp T        &kp Z      &kp U        &kp I        &kp O         &kp P               &scharfes_s
         &capdance  &kp A  &hml LCTRL S  &hml LALT D  &hml LCMD F  &kp G        &kp H      &hmr RCMD J  &hmr RALT K  &hmr RCTRL L  &simulate_umlaut_a  &kp APOS
         &kp LSHFT  &kp Y  &kp X         &kp C        &kp V        &kp B        &kp N      &kp M        &kp COMMA    &kp DOT       &kp FSLH            &kp ESC
                                         &lt 2 LGUI   &lt 1 SPACE  &kp SPACE    &lt 1 RET  &lt 2 RALT   &kp LCTRL
@@ -171,9 +188,9 @@
 
     lower {
       bindings = <
-        &kp EXCL  &kp QUESTION    &kp AT    &kp DOLLAR  &kp PRCNT         &kp CARET            &kp AMPS   &kp STAR       &kp LEFT_BRACKET      &kp RIGHT_BRACKET     &kp PLUS           &kp PIPE
+        &kp EXCL  &kp QUESTION    &kp AT    &kp PRCNT  &kp UNDERSCORE         &kp CARET            &kp AMPS   &kp STAR       &kp LEFT_BRACKET      &kp RIGHT_BRACKET     &kp PLUS           &kp PIPE
         &kp LBRC  &kp RBRC        &kp LPAR  &kp RPAR    &kp HASH          &kp MINUS            &kp EQUAL  &kp TILDE      &kp GRAVE             &kp SLASH             &kp COLON          &kp SEMI
-        &trans    &kp UNDERSCORE  &kp DOT   &kp COMMA   &kp SINGLE_QUOTE  &kp DOUBLE_QUOTES    &kp AT     &kp BACKSLASH  &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP
+        &trans    &kp AMPERSAND  &euro  &kp DOLLAR   &kp SINGLE_QUOTE  &kp DOUBLE_QUOTES    &kp AT     &kp BACKSLASH  &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP
                                             &trans      &trans            &kp DEL              &trans     &trans         &kp LCTRL
       >;
     };
