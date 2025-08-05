@@ -16,39 +16,9 @@
   combos {
     compatible = "zmk,combos";
 
-    tab {
-      key-positions = <2 3>;
-      bindings = <&kp TAB>;
-    };
-
-    ctrl {
-      key-positions = <26 27>;
-      bindings = <&kp LCTRL>;
-    };
-
-    cmd {
-      key-positions = <37 38>;
-      bindings = <&kp LCMD>;
-    };
-
     alt {
       key-positions = <39 40>;
       bindings = <&kp LEFT_ALT>;
-    };
-
-    shift {
-      key-positions = <8 9>;
-      bindings = <&kp LSHIFT>;
-    };
-
-    caps_word {
-      key-positions = <17 18>;
-      bindings = <&caps_word>;
-    };
-
-    delete {
-      key-positions = <32 33>;
-      bindings = <&kp DEL>;
     };
   };
 
@@ -97,19 +67,34 @@
     simulate_umlaut_a: simulate_umlaut_a {
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
-      bindings = <
-          // Press Right Control (your compose key)
-          &macro_press   &kp RCTL
-          &macro_release &kp RCTL
-          // Press double quote
-          &macro_press   &kp DOUBLE_QUOTES
-          &macro_release &kp DOUBLE_QUOTES
+      bindings
+        = <&macro_press>
+        , <&kp RCTL>
+        , <&macro_release>
+        , <&kp RCTL>
+        , <&macro_press>
+        , <&kp DOUBLE_QUOTES>
+        , <&macro_release>
+        , <&kp DOUBLE_QUOTES>
+        ;
+    };
 
-          // Press 'a'
-          // &macro_press   &kp A
-          // &macro_release &kp A
-        >;
-      };
+    euro: euro {
+      compatible = "zmk,behavior-macro";
+      #binding-cells = <0>;
+      bindings
+        = <&macro_press>
+        , <&kp RCTL>
+        , <&macro_release>
+        , <&kp RCTL>
+        , <&macro_press>
+        , <&kp DOUBLE_QUOTES>
+        , <&macro_release>
+        , <&kp DOUBLE_QUOTES>
+        ;
+
+      label = "EURO";
+    };
   };
 
   behaviors {
@@ -122,27 +107,27 @@
       tapping-term-ms = <300>;
     };
 
-hml: homewrow_mods_left {
-    compatible = "zmk,behavior-hold-tap";
-    #binding-cells = <2>;
-    label = "HOMEROW_MODS_LEFT_HAND";
-    bindings = <&kp>, <&kp>;
+    hml: homewrow_mods_left {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      label = "HOMEROW_MODS_LEFT_HAND";
+      bindings = <&kp>, <&kp>;
 
-    flavor = "tap-preferred";
-    tapping-term-ms = <250>;
-    hold-trigger-key-positions = <6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 39 40 41>;
-};
+      flavor = "tap-preferred";
+      tapping-term-ms = <250>;
+      hold-trigger-key-positions = <6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 39 40 41>;
+    };
 
-hmr: homewrow_mods_right {
-    compatible = "zmk,behavior-hold-tap";
-    #binding-cells = <2>;
-    label = "HOMEROW_MODS_RIGHT_HAND";
-    bindings = <&kp>, <&kp>;
+    hmr: homewrow_mods_right {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      label = "HOMEROW_MODS_RIGHT_HAND";
+      bindings = <&kp>, <&kp>;
 
-    flavor = "tap-preferred";
-    tapping-term-ms = <250>;
-    hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38>;
-};
+      flavor = "tap-preferred";
+      tapping-term-ms = <250>;
+      hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38>;
+    };
 
     capdance: capdance {
       compatible = "zmk,behavior-tap-dance";
@@ -175,9 +160,9 @@ hmr: homewrow_mods_right {
 
     base {
       bindings = <
-        &kp TAB    &kp Q  &kp W         &kp E        &kp R        &kp T        &kp Z      &kp U        &kp I        &kp O         &kp P          &kp BSLH
-        &capdance  &kp A  &hml LCTRL S  &hml LALT D  &hml LCMD F  &kp G        &kp H      &hmr RCMD J  &hmr RALT K  &hmr RCTRL L  &simulate_umlaut_a     &kp APOS
-        &kp LSHFT  &kp Y  &kp X         &kp C        &kp V        &kp B        &kp N      &kp M        &kp COMMA    &kp DOT       &kp FSLH       &kp ESC
+        &kp TAB    &kp Q  &kp W         &kp E        &kp R        &kp T        &kp Z      &kp U        &kp I        &kp O         &kp P               &kp BSLH
+        &capdance  &kp A  &hml LCTRL S  &hml LALT D  &hml LCMD F  &kp G        &kp H      &hmr RCMD J  &hmr RALT K  &hmr RCTRL L  &simulate_umlaut_a  &kp APOS
+        &kp LSHFT  &kp Y  &kp X         &kp C        &kp V        &kp B        &kp N      &kp M        &kp COMMA    &kp DOT       &kp FSLH            &kp ESC
                                         &lt 2 LGUI   &lt 1 SPACE  &kp SPACE    &lt 1 RET  &lt 2 RALT   &kp LCTRL
       >;
     };
